@@ -16,7 +16,7 @@
 #let oiiint = $integral.vol$
 #let bu(unit) = $bold(upright(unit))$
 #let vtr(unit) = $bold(upright(unit))$
-#let u(unit) = $upright(unit)$
+#let up(unit) = $upright(unit)$
 #let dt = $upright(d) t$
 #let dx = $upright(d) x$
 #let dy = $upright(d) y$
@@ -52,6 +52,10 @@
   let joined = args.pos().map(x => $#x$).join(",")
   $angle.l joined angle.r$
 }
+#let paren(..args) = {
+  let joined = args.pos().map(x => $#x$).join(",")
+  $paren.l joined paren.r$
+}
 
 // misc symbols
 #let infty = $infinity$
@@ -65,22 +69,21 @@
 #let Wlog = "Without loss of generality"
 #let Sps = "Suppose"
 #let Spst = "Suppose that"
+#let wrt = "with respect to"
+#let qquad = $quad quad$
 #let cdots = math.class("relation", $dot thin dot thin dot$)
 #let ldots = math.class("relation", $. thin . thin .$)
 #let comp = $compose$
 #let propto = $prop$
 #let varphi = $phi.alt$
 #let mapsto = $arrow.r.long.bar$
+#let exiuni = $exists!$
 
 // misc operators
 #let Id = $op("Id")$
 #let Im = $op("Im")$
 #let sgn = $op("sgn")$
-#let max = $limits(op("max"))$
-#let min = $limits(op("min"))$
 #let prod = $limits(product)$
 #let sum = $limits(sum)$
 #let oplus = $plus.circle$
 #let otimes = $times.circle$
-
-#show link: underline
